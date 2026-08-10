@@ -153,7 +153,13 @@
       "Lactobacillus sakei GK-3 · KCTC 16526BP",
       "Komagataeibacter intermedius RFK188 · KCTC 16527BP"
     ],
+    "registeredPatents": [],
+    "patentApplications": [
+      "특허출원 10-2025-0185982",
+      "특허출원 10-2025-0186011"
+    ],
     "patents": [
+      "등록 특허: 공개 자료 없음",
       "특허출원 10-2025-0185982",
       "특허출원 10-2025-0186011"
     ],
@@ -393,6 +399,6 @@
   "syncHealth": {
     "mode": "fallback-snapshot",
     "endpointConfigured": false,
-    "status": "Drive endpoint 미설정 · 마지막 승인 스냅샷으로 표시 중"
+    "status": "Drive endpoint 미설정 · 승인 스냅샷"
   }
 }

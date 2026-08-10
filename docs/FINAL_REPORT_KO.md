@@ -62,3 +62,8 @@ endpoint가 등록되기 전에는 사이트가 승인된 fallback snapshot을 �
 현재 판정: `CONDITIONAL_GO`
 
 공개 웹·정적 검증·공개 경계·협업 UX는 운영 가능한 상태입니다. Drive 실시간 동기화와 문의 메일 end-to-end는 Apps Script Web App 배포 및 실제 운영 이메일 설정 이후 최종 승인 대상으로 남아 있습니다.
+## 7. 추가 보강 (2026-08-10)
+
+- 공개 기술 모델에서 `registeredPatents`와 `patentApplications`를 분리했습니다. 등록 특허 공개 자료가 없을 때는 빈 배열로 유지하고, 기존 화면 호환 필드에도 “등록 특허: 공개 자료 없음”을 표시합니다.
+- Apps Script 공개 인덱스 검증 단계에서도 구형 `patents` 열을 출원 목록으로 정규화하도록 보강했습니다.
+- Apps Script 계약 테스트와 공개 인덱스 통합 테스트를 추가해 총 4개 테스트 파일, 11개 테스트가 통과했습니다.
