@@ -39,3 +39,24 @@ Apps Script Script Properties에 `MASTER_SHEET_ID`, `ROOT_FOLDER_ID`, `TRIGGER_M
 - `repository_dispatch` 기반 Drive sync: 검증 완료
 - Drive endpoint: 미설정이므로 승인 폴백 스냅샷 유지
 - Apps Script 웹 앱: 최초 권한 승인·배포 후 endpoint 등록 필요
+## Deployment checklist
+
+1. Open the Apps Script project from the Master Control Sheet and paste `apps-script/Code.gs`.
+2. Set `MASTER_SHEET_ID`, `ROOT_FOLDER_ID`, and `TRIGGER_MINUTES=30` in Script Properties.
+3. Run `setupProject()` once to authorize Drive, Sheets, and the time trigger.
+4. Deploy as a Web App and register its `/exec` URL as the GitHub Repository Variable `DRIVE_INDEX_ENDPOINT`.
+5. To activate inquiries, configure real `ADMIN_NOTIFICATION_EMAIL`, `INQUIRY_REPLY_TO_EMAIL`, and the Pages build variable `VITE_CONSULTATION_ENDPOINT`.
+
+URLs, tokens, and email addresses are never committed. Without an endpoint, the repository retains the approved fallback snapshot and does not claim that automatic synchronization is active.
+
+## Operations and recovery
+
+- Full verification: `pnpm run validate:data`, `pnpm run lint`, `pnpm run typecheck`, `pnpm test`, `pnpm run build`
+- Deployment health: `pnpm run check:deployment`
+- Manual sync: run the `Drive index sync` GitHub Action with `workflow_dispatch`.
+- Endpoint failure: preserve the last approved snapshot, emit a warning, and fail closed on private URLs.
+- Runbooks: `docs/DEPLOYMENT_CHECKLIST_KO.md`, `docs/OPERATIONS_RUNBOOK.md`, `docs/SECURITY_REVIEW.md`, and `docs/DATA_DICTIONARY.md`.
+
+## Current verification boundary
+
+The code and public Pages deployment are verified. Drive-to-Pages synchronization and inquiry email E2E remain unverified until the user deploys the Apps Script Web App and configures real operations email addresses. See `docs/FINAL_REPORT_KO.md` for the evidence-based status.
