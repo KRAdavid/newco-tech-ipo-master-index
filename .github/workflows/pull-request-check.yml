@@ -14,5 +14,5 @@ jobs:
       - run: pnpm run lint
       - run: pnpm run typecheck
       - run: pnpm test
-      - run: pnpm run check:links
       - run: pnpm run build
+      - run: pnpm run check:links

@@ -15,6 +15,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm run validate:data
       - run: pnpm run lint
+      - run: pnpm run build
       - run: pnpm run check:links
       - name: Check deployed Pages and public JSON
         shell: bash
