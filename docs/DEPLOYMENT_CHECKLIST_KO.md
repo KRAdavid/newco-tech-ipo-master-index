@@ -39,6 +39,7 @@ URL과 키는 추정하거나 저장소에 하드코딩하지 않습니다. 설�
 - `pnpm test`
 - `pnpm run build`
 - `pnpm run check:links`
+- `node scripts/check-deployment-health.mjs` (endpoint 미설정 시 경고, 설정 후 응답·스키마·신선도·문의 endpoint 확인)
 - Drive sync workflow 실행 후 `syncHealth.mode=apps-script` 확인
 - 공개 JSON에 RESTRICTED·CONFIDENTIAL 원본 URL, 개인정보, Secret·Token이 없는지 확인
 - 상담 제출 후 `협업문의` 행 생성, 라우팅, 담당자 알림, 신청자 확인 메일, requestId를 end-to-end 확인

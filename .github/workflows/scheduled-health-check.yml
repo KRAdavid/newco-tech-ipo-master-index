@@ -17,6 +17,11 @@ jobs:
       - run: pnpm run lint
       - run: pnpm run build
       - run: pnpm run check:links
+      - name: Check Drive feed and consultation endpoint
+        run: node scripts/check-deployment-health.mjs
+        env:
+          DRIVE_INDEX_ENDPOINT: ${{ vars.DRIVE_INDEX_ENDPOINT }}
+          DRIVE_SHARED_KEY: ${{ secrets.DRIVE_SHARED_KEY }}
       - name: Check deployed Pages and public JSON
         shell: bash
         run: |
