@@ -46,6 +46,8 @@ describe('Apps Script deployment contract', () => {
     expect(source).toContain('DigestAlgorithm.MD5');
     expect(source).toContain('CacheService.getScriptCache');
     expect(source).toContain("function doPost(e)");
+    expect(source).toContain('PENDING_NOTIFICATION');
+    expect(source).toContain("writeSyncLog('inquiry-notification'");
   });
 
   it('uses the Apps Script web-app runtime and does not embed credentials', () => {

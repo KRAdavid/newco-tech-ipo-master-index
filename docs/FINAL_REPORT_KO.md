@@ -68,3 +68,4 @@ endpoint가 등록되기 전에는 사이트가 승인된 fallback snapshot을 �
 - Apps Script 공개 인덱스 검증 단계에서도 구형 `patents` 열을 출원 목록으로 정규화하도록 보강했습니다.
 - Apps Script 계약 테스트와 공개 인덱스 통합 테스트를 추가해 총 4개 테스트 파일, 11개 테스트가 통과했습니다.
 - Drive sync workflow integration tests now exercise a local endpoint fixture: approved payloads are written, non-public payloads are rejected, and the previous snapshot is preserved. Total test count is now 5 files / 13 tests.
+- Inquiry notification handling now preserves the recorded request when MailApp delivery fails: the row is marked `PENDING_NOTIFICATION`, the request ID remains available, and a sync warning is logged for operations.

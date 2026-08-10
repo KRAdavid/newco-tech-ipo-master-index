@@ -97,3 +97,17 @@ function validatePublicIndex(index){
   index.documents.forEach(d=>{if(d.publicationLevel!=='PUBLIC'||d.publicationApproved!=='Y'||d.publicUrl&&d.publicationLevel!=='PUBLIC') throw new Error('Publication boundary violation');});
   return true;
 }
+// Notification failures must not turn a successfully recorded inquiry into a
+// false submission failure. The request remains traceable in the sheet and
+// can be retried by operations after the recipient properties are configured.
+function sendInquiryNotifications(item){
+  const to=item.route.recipientEmail||prop_('ADMIN_NOTIFICATION_EMAIL');
+  const reply=prop_('INQUIRY_REPLY_TO_EMAIL')||to;
+  const errors=[]; let adminSent=false; let userSent=false;
+  if(to){try{MailApp.sendEmail({to,cc:item.route.ccEmail||'',subject:'[Master Index] 문의 '+item.id,body:item.summary+'\n\n접수번호: '+item.id+'\n회신 이메일: '+item.clean.email}); adminSent=true;}catch(err){errors.push('admin:'+String(err.message||err));}}else errors.push('admin recipient not configured');
+  if(reply){try{MailApp.sendEmail({to:item.clean.email,replyTo:reply,subject:'문의 접수확인 '+item.id,body:'문의가 접수되었습니다.\n접수번호: '+item.id+'\n담당자가 영업일 기준 2일 이내 회신합니다.'}); userSent=true;}catch(err){errors.push('user:'+String(err.message||err));}}else errors.push('reply recipient not configured');
+  const sheet=SpreadsheetApp.openById(prop_('MASTER_SHEET_ID')).getSheetByName(SHEETS.inquiries);
+  if(sheet){const ids=sheet.getRange(1,1,Math.max(sheet.getLastRow(),1),1).getValues().map(row=>String(row[0]||'')); const row=ids.lastIndexOf(item.id)+1; if(row>0){sheet.getRange(row,3).setValue(errors.length?'PENDING_NOTIFICATION':'NOTIFIED'); if(!errors.length)sheet.getRange(row,31).setValue(new Date());}}
+  if(errors.length)writeSyncLog('inquiry-notification','warning',item.id+' '+errors.join('; '));
+  return {adminSent,userSent,errors};
+}
