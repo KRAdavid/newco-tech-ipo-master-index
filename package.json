@@ -1,0 +1,17 @@
+{
+  "name": "newco-tech-ipo-master-index",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "validate:data": "node scripts/validate-public-index.mjs && node scripts/validate-no-private-data.mjs",
+    "sync:data": "node scripts/sync-drive-index.mjs"
+  },
+  "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "typescript": "latest", "react": "latest", "react-dom": "latest", "lucide-react": "latest" },
+  "devDependencies": { "vitest": "latest", "eslint": "latest", "@types/react": "latest", "@types/react-dom": "latest" }
+}

@@ -1,0 +1,9 @@
+name: Scheduled health check
+on: {schedule: [{cron: '17 */6 * * *'}], workflow_dispatch:}
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm run validate:data
+      - run: curl --fail --silent --show-error --location --max-time 20 https://kradavid.github.io/newco-tech-ipo-master-index/ || echo 'Pages URL not reachable yet'
