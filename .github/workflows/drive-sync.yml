@@ -2,7 +2,13 @@ name: Drive index sync
 on:
   schedule: [{cron: '*/30 * * * *'}]
   workflow_dispatch:
-  repository_dispatch: {types: [drive-index-updated]}
+    inputs:
+      reason:
+        description: '동기화 실행 사유'
+        required: false
+        default: 'manual verification'
+  repository_dispatch:
+    types: [drive-index-updated]
 jobs:
   sync:
     runs-on: ubuntu-latest
