@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "test": "vitest run",
     "validate:data": "node scripts/validate-public-index.mjs && node scripts/validate-no-private-data.mjs",
-    "sync:data": "node scripts/sync-drive-index.mjs"
+    "sync:data": "node scripts/sync-drive-index.mjs",
+    "fallback:data": "node scripts/generate-fallback-index.mjs",
+    "check:links": "node scripts/check-links.mjs"
   },
   "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "typescript": "latest", "react": "latest", "react-dom": "latest", "lucide-react": "latest" },
   "devDependencies": { "vitest": "latest", "eslint": "latest", "@types/react": "latest", "@types/react-dom": "latest" }

@@ -9,6 +9,7 @@ pnpm install
 pnpm dev
 pnpm run validate:data
 pnpm run typecheck
+pnpm test
 pnpm run build
 ```
 

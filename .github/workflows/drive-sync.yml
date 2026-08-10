@@ -9,9 +9,11 @@ jobs:
     permissions: {contents: write}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: {version: 9}
       - uses: actions/setup-node@v4
         with: {node-version: 20}
       - run: node scripts/sync-drive-index.mjs
         env: {DRIVE_INDEX_ENDPOINT: '${{ vars.DRIVE_INDEX_ENDPOINT }}', DRIVE_SHARED_KEY: '${{ secrets.DRIVE_SHARED_KEY }}'}
-      - run: npm run validate:data
+      - run: pnpm run validate:data
       - run: git diff --quiet || (git config user.name 'github-actions[bot]' && git config user.email '41898282+github-actions[bot]@users.noreply.github.com' && git add public/data/master-index.json && git commit -m 'chore: sync approved Drive index' && git push)
