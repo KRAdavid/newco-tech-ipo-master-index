@@ -1,6 +1,7 @@
 name: Drive index sync
 on:
-  schedule: [{cron: '*/30 * * * *'}]
+  schedule:
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       reason:
@@ -8,11 +9,13 @@ on:
         required: false
         default: 'manual verification'
   repository_dispatch:
-    types: [drive-index-updated]
+    types:
+      - drive-index-updated
 jobs:
   sync:
     runs-on: ubuntu-latest
-    permissions: {contents: write}
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -20,6 +23,8 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 20}
       - run: node scripts/sync-drive-index.mjs
-        env: {DRIVE_INDEX_ENDPOINT: '${{ vars.DRIVE_INDEX_ENDPOINT }}', DRIVE_SHARED_KEY: '${{ secrets.DRIVE_SHARED_KEY }}'}
+        env:
+          DRIVE_INDEX_ENDPOINT: ${{ vars.DRIVE_INDEX_ENDPOINT }}
+          DRIVE_SHARED_KEY: ${{ secrets.DRIVE_SHARED_KEY }}
       - run: pnpm run validate:data
       - run: git diff --quiet || (git config user.name 'github-actions[bot]' && git config user.email '41898282+github-actions[bot]@users.noreply.github.com' && git add public/data/master-index.json && git commit -m 'chore: sync approved Drive index' && git push)
