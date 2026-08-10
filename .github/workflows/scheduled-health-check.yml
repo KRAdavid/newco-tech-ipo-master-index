@@ -5,5 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm run validate:data
-      - run: curl --fail --silent --show-error --location --max-time 20 https://kradavid.github.io/newco-tech-ipo-master-index/ || echo 'Pages URL not reachable yet'
+      - uses: pnpm/action-setup@v4
+        with: {version: 9}
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: pnpm}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run validate:data
+      - run: pnpm run lint
+      - run: pnpm run check:links
+      - name: Check deployed Pages and public JSON
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location --max-time 20 https://kradavid.github.io/newco-tech-ipo-master-index/ >/dev/null
+          curl --fail --silent --show-error --location --max-time 20 https://kradavid.github.io/newco-tech-ipo-master-index/data/master-index.json > /tmp/master-index.json
+          node -e "const d=require('/tmp/master-index.json'); if(d.schemaVersion!=='1.0.0'||d.gates.length!==10||d.gates.reduce((s,g)=>s+Number(g.weight||0),0)!==100) process.exit(1); console.log('deployed public JSON valid')"
