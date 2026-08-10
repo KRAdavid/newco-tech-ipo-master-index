@@ -31,6 +31,11 @@ Apps Script Script Properties에 `MASTER_SHEET_ID`, `ROOT_FOLDER_ID`, `TRIGGER_M
 
 공개 JSON은 `publicationLevel = PUBLIC`이고 `publicationApproved = Y`인 항목만 허용합니다. `RESTRICTED`·`CONFIDENTIAL` 원문 URL, 개인정보, 토큰, 비공개 원자료는 fail-closed 검증으로 배포를 중단합니다. 81 g/L는 특허출원 실시예 제시값이며 질량수지·독립 반복·외부 교차분석이 필요한 상태입니다.
 
-## 현재 미연결 상태
+## 현재 운영 상태
 
-2026-08-10 기준 GitHub 원격 `KRAdavid/newco-tech-ipo-master-index`는 공개 조회되지 않았고, Drive endpoint도 설정되지 않았습니다. 따라서 로컬 구현과 승인 폴백 스냅샷까지 검증했으며 실제 GitHub push, Apps Script 배포 승인, Pages 공개 URL은 계정 권한과 운영값 입력 후 확인해야 합니다.
+- GitHub 저장소: https://github.com/KRAdavid/newco-tech-ipo-master-index
+- 공개 Pages: https://kradavid.github.io/newco-tech-ipo-master-index/
+- Pages workflow 및 `workflow_dispatch`: 검증 완료
+- `repository_dispatch` 기반 Drive sync: 검증 완료
+- Drive endpoint: 미설정이므로 승인 폴백 스냅샷 유지
+- Apps Script 웹 앱: 최초 권한 승인·배포 후 endpoint 등록 필요

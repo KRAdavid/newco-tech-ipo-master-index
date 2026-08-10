@@ -15,8 +15,15 @@
 
 ## 미검증/차단
 
-- GitHub 원격 접근·push·Pages URL: 원격 저장소 조회 불가
 - Google Drive endpoint와 Apps Script 웹 앱: 운영값·최초 권한 승인 필요
 - 실제 이메일 라우팅: 수신 주소와 Apps Script 배포 후 브라우저 검증 필요
 - Chromium screenshot 기반 시각 QA: 현재 연결된 브라우저 자동화 도구 부재
-- 실제 GitHub Actions 실행: 원격 저장소가 404라 workflow dispatch 불가
+
+## 외부 검증 완료
+
+- GitHub 저장소 생성 및 `main` push 완료
+- GitHub Pages 실제 URL HTTP 200
+- 공개 JSON endpoint HTTP 200
+- Pages workflow 성공
+- Drive sync `workflow_dispatch` 성공
+- Drive sync `repository_dispatch` 성공
