@@ -55,7 +55,7 @@ URLs, tokens, and email addresses are never committed. Without an endpoint, the 
 - Deployment health: `pnpm run check:deployment`
 - Manual sync: run the `Drive index sync` GitHub Action with `workflow_dispatch`.
 - Endpoint failure: preserve the last approved snapshot, emit a warning, and fail closed on private URLs.
-- Runbooks: `docs/DEPLOYMENT_CHECKLIST_KO.md`, `docs/OPERATIONS_RUNBOOK.md`, `docs/SECURITY_REVIEW.md`, and `docs/DATA_DICTIONARY.md`.
+- Runbooks: `docs/DEPLOYMENT_CHECKLIST_KO.md`, `docs/OPERATIONS_RUNBOOK.md`, `docs/SECURITY_REVIEW.md`, `docs/DATA_DICTIONARY.md`, and `docs/REQUIREMENTS_TRACEABILITY_KO.md`.
 
 ## Current verification boundary
 
