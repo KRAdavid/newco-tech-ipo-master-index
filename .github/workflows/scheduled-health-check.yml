@@ -1,5 +1,8 @@
 name: Scheduled health check
-on: {schedule: [{cron: '17 */6 * * *'}], workflow_dispatch:}
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 jobs:
   health:
     runs-on: ubuntu-latest
