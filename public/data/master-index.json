@@ -1,24 +1,398 @@
 {
-  "schemaVersion":"1.0.0","generatedAt":"2026-08-10T00:00:00.000Z","source":{"type":"Google Drive + Master Control","lastSyncedAt":"2026-08-10T00:00:00.000Z"},
-  "project":{"name":"신규 제조법인 기술특례상장 준비","tagline":"Precision-Fermented GABA Biomaterials Platform","targetListingYear":2030,"decision":"Conditional GO"},
-  "readiness":{"score":32,"label":"내부 준비도","note":"공식 기술평가 등급이 아닌 내부 관리지표입니다."},
-  "gates":[
-    {"id":"G01","area":"법인·IP","title":"핵심 IP·균주·데이터 귀속","description":"특허출원권, 균주 관리권, 연구데이터와 SOP의 귀속을 정리합니다.","passCriteria":"핵심 자산과 연구인력이 신규법인에 귀속","status":"in_progress","weight":10,"targetDate":"2026-Q4","evidenceCount":2,"checklistProgress":45,"publicSummary":"권리 귀속과 연구데이터 관리체계 정리 중"},
-    {"id":"G02","area":"기술 신뢰성","title":"81 g/L 질량수지·독립검증","description":"특허출원 실시예 수치의 질량수지와 교차분석을 검증합니다.","passCriteria":"원시 HPLC, 표준곡선, 희석배수, 회수율 및 외부기관 교차분석 완료","status":"blocked","weight":12,"targetDate":"2027-Q2","evidenceCount":1,"checklistProgress":18,"publicSummary":"특허출원 실시예의 81 g/L는 질량수지·독립 반복·외부 교차분석이 필요합니다."},
-    {"id":"G03","area":"기술 신뢰성","title":"실험실 반복 재현성","description":"동일 SOP 기반 독립 배치 반복과 변동성을 관리합니다.","passCriteria":"5 L 독립배치 5회 이상과 핵심지표 변동성 관리","status":"in_progress","weight":10,"targetDate":"2027-Q1","evidenceCount":2,"checklistProgress":35,"publicSummary":"반복배치 설계 및 변동성 관리 기준 수립 중"},
-    {"id":"G04","area":"Scale-up","title":"300 L 파일럿 재현성","description":"실험실 조건을 파일럿 규모로 확장하고 기준을 검증합니다.","passCriteria":"300 L 이상 독립배치 3회 및 Titer·Yield·Productivity 검증","status":"not_started","weight":12,"targetDate":"2028-Q2","evidenceCount":0,"checklistProgress":0,"publicSummary":"공정이전 및 파일럿 배치 계획 단계"},
-    {"id":"G05","area":"제조·품질","title":"상업배치 및 QA·QC 체계","description":"제품규격, 일탈, 변경관리, CAPA와 추적성을 확보합니다.","passCriteria":"연속 상업배치와 QA·QC 운영체계 확보","status":"not_started","weight":12,"targetDate":"2028-Q4","evidenceCount":0,"checklistProgress":0,"publicSummary":"상업 제조·품질 시스템 설계 전"},
-    {"id":"G06","area":"제품 경쟁력","title":"용도별 규격·회수율·원가·안정성","description":"휴먼·사료 우선 제품의 사양과 원가를 검증합니다.","passCriteria":"순도·함량·회수율·안정성·원가·COA 확립","status":"in_progress","weight":10,"targetDate":"2028-Q2","evidenceCount":1,"checklistProgress":28,"publicSummary":"우선 상용화 제품의 규격 정의 중"},
-    {"id":"G07","area":"시장성","title":"비특수관계자 고객 검증","description":"외부 고객의 유상 샘플, 품질승인과 반복발주를 확인합니다.","passCriteria":"외부 고객 검증과 공급계약 증빙 확보","status":"not_started","weight":10,"targetDate":"2029-Q1","evidenceCount":0,"checklistProgress":0,"publicSummary":"고객 검증 계획 수립 전"},
-    {"id":"G08","area":"재무·투명성","title":"K-IFRS·내부통제·지정감사","description":"제조원가, 재고수불, 관계회사 거래와 감사 대응체계를 구축합니다.","passCriteria":"회계·내부통제 및 감사 대응체계 구축","status":"not_started","weight":8,"targetDate":"2029-Q1","evidenceCount":0,"checklistProgress":0,"publicSummary":"신규 제조법인 회계·통제체계 설계 전"},
-    {"id":"G09","area":"상장준비","title":"주관사·모의 기술평가","description":"주관사 사전실사와 모의 기술성평가를 준비합니다.","passCriteria":"사전실사·모의검토·예상 Q&A·데이터룸 완료","status":"not_started","weight":8,"targetDate":"2029-Q3","evidenceCount":0,"checklistProgress":0,"publicSummary":"상장 준비 자료체계의 선행조건 관리"},
-    {"id":"G10","area":"상장심사","title":"정식 기술평가·상장예비심사","description":"정식 전문평가 및 예비심사 신청요건을 준비합니다.","passCriteria":"정식 평가와 예비심사 신청요건 충족","status":"not_started","weight":8,"targetDate":"2030-Q2","evidenceCount":0,"checklistProgress":0,"publicSummary":"2030년 목표의 최종 Gate"}
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-10T00:00:00.000Z",
+  "source": {
+    "type": "Google Drive + Master Control",
+    "lastSyncedAt": "2026-08-10T00:00:00.000Z"
+  },
+  "project": {
+    "name": "신규 제조법인 기술특례상장 준비",
+    "tagline": "Precision-Fermented GABA Biomaterials Platform",
+    "targetListingYear": 2030,
+    "decision": "Conditional GO"
+  },
+  "readiness": {
+    "score": 32,
+    "label": "내부 준비도",
+    "note": "공식 기술평가 등급이 아닌 내부 관리지표입니다."
+  },
+  "gates": [
+    {
+      "id": "G01",
+      "area": "법인·IP",
+      "title": "핵심 IP·균주·데이터 귀속",
+      "description": "특허출원권, 균주 관리권, 연구데이터와 SOP의 귀속을 정리합니다.",
+      "passCriteria": "핵심 자산과 연구인력이 신규법인에 귀속",
+      "status": "in_progress",
+      "weight": 10,
+      "targetDate": "2026-Q4",
+      "evidenceCount": 2,
+      "checklistProgress": 45,
+      "publicSummary": "권리 귀속과 연구데이터 관리체계 정리 중"
+    },
+    {
+      "id": "G02",
+      "area": "기술 신뢰성",
+      "title": "81 g/L 질량수지·독립검증",
+      "description": "특허출원 실시예 수치의 질량수지와 교차분석을 검증합니다.",
+      "passCriteria": "원시 HPLC, 표준곡선, 희석배수, 회수율 및 외부기관 교차분석 완료",
+      "status": "blocked",
+      "weight": 12,
+      "targetDate": "2027-Q2",
+      "evidenceCount": 1,
+      "checklistProgress": 18,
+      "publicSummary": "특허출원 실시예의 81 g/L는 질량수지·독립 반복·외부 교차분석이 필요합니다."
+    },
+    {
+      "id": "G03",
+      "area": "기술 신뢰성",
+      "title": "실험실 반복 재현성",
+      "description": "동일 SOP 기반 독립 배치 반복과 변동성을 관리합니다.",
+      "passCriteria": "5 L 독립배치 5회 이상과 핵심지표 변동성 관리",
+      "status": "in_progress",
+      "weight": 10,
+      "targetDate": "2027-Q1",
+      "evidenceCount": 2,
+      "checklistProgress": 35,
+      "publicSummary": "반복배치 설계 및 변동성 관리 기준 수립 중"
+    },
+    {
+      "id": "G04",
+      "area": "Scale-up",
+      "title": "300 L 파일럿 재현성",
+      "description": "실험실 조건을 파일럿 규모로 확장하고 기준을 검증합니다.",
+      "passCriteria": "300 L 이상 독립배치 3회 및 Titer·Yield·Productivity 검증",
+      "status": "not_started",
+      "weight": 12,
+      "targetDate": "2028-Q2",
+      "evidenceCount": 0,
+      "checklistProgress": 0,
+      "publicSummary": "공정이전 및 파일럿 배치 계획 단계"
+    },
+    {
+      "id": "G05",
+      "area": "제조·품질",
+      "title": "상업배치 및 QA·QC 체계",
+      "description": "제품규격, 일탈, 변경관리, CAPA와 추적성을 확보합니다.",
+      "passCriteria": "연속 상업배치와 QA·QC 운영체계 확보",
+      "status": "not_started",
+      "weight": 12,
+      "targetDate": "2028-Q4",
+      "evidenceCount": 0,
+      "checklistProgress": 0,
+      "publicSummary": "상업 제조·품질 시스템 설계 전"
+    },
+    {
+      "id": "G06",
+      "area": "제품 경쟁력",
+      "title": "용도별 규격·회수율·원가·안정성",
+      "description": "휴먼·사료 우선 제품의 사양과 원가를 검증합니다.",
+      "passCriteria": "순도·함량·회수율·안정성·원가·COA 확립",
+      "status": "in_progress",
+      "weight": 10,
+      "targetDate": "2028-Q2",
+      "evidenceCount": 1,
+      "checklistProgress": 28,
+      "publicSummary": "우선 상용화 제품의 규격 정의 중"
+    },
+    {
+      "id": "G07",
+      "area": "시장성",
+      "title": "비특수관계자 고객 검증",
+      "description": "외부 고객의 유상 샘플, 품질승인과 반복발주를 확인합니다.",
+      "passCriteria": "외부 고객 검증과 공급계약 증빙 확보",
+      "status": "not_started",
+      "weight": 10,
+      "targetDate": "2029-Q1",
+      "evidenceCount": 0,
+      "checklistProgress": 0,
+      "publicSummary": "고객 검증 계획 수립 전"
+    },
+    {
+      "id": "G08",
+      "area": "재무·투명성",
+      "title": "K-IFRS·내부통제·지정감사",
+      "description": "제조원가, 재고수불, 관계회사 거래와 감사 대응체계를 구축합니다.",
+      "passCriteria": "회계·내부통제 및 감사 대응체계 구축",
+      "status": "not_started",
+      "weight": 8,
+      "targetDate": "2029-Q1",
+      "evidenceCount": 0,
+      "checklistProgress": 0,
+      "publicSummary": "신규 제조법인 회계·통제체계 설계 전"
+    },
+    {
+      "id": "G09",
+      "area": "상장준비",
+      "title": "주관사·모의 기술평가",
+      "description": "주관사 사전실사와 모의 기술성평가를 준비합니다.",
+      "passCriteria": "사전실사·모의검토·예상 Q&A·데이터룸 완료",
+      "status": "not_started",
+      "weight": 8,
+      "targetDate": "2029-Q3",
+      "evidenceCount": 0,
+      "checklistProgress": 0,
+      "publicSummary": "상장 준비 자료체계의 선행조건 관리"
+    },
+    {
+      "id": "G10",
+      "area": "상장심사",
+      "title": "정식 기술평가·상장예비심사",
+      "description": "정식 전문평가 및 예비심사 신청요건을 준비합니다.",
+      "passCriteria": "정식 평가와 예비심사 신청요건 충족",
+      "status": "not_started",
+      "weight": 8,
+      "targetDate": "2030-Q2",
+      "evidenceCount": 0,
+      "checklistProgress": 0,
+      "publicSummary": "2030년 목표의 최종 Gate"
+    }
   ],
-  "technology":{"strains":["Lactobacillus sakei GK-3 · KCTC 16526BP","Komagataeibacter intermedius RFK188 · KCTC 16527BP"],"patents":["특허출원 10-2025-0185982","특허출원 10-2025-0186011"],"process":["하이브리드 정밀발효","분리·청징·표준화","GABA 바이오소재 플랫폼"]},
-  "claims":[{"claimId":"CLM-001","claim":"동시 혼합배양 조건에서 GABA 81 g/L가 제시됨","claimType":"특허출원 실시예","evidenceLevel":"patent_application","limitation":"질량수지·독립 반복·외부 교차분석 필요","verificationStatus":"verification_required","publicWording":"특허출원 실시예에서 81 g/L가 제시되었습니다.","prohibitedWording":"상업생산에서 81 g/L를 달성했습니다."},{"claimId":"CLM-002","claim":"핵심 균주 2종이 KCTC에 국제기탁됨","claimType":"기탁 사실","evidenceLevel":"official_document","limitation":"기탁은 기술 효능이나 상업성 인증을 의미하지 않음","verificationStatus":"partially_verified","publicWording":"부다페스트조약에 따른 국제기탁기관 KCTC에 핵심 균주 2종을 기탁했습니다.","prohibitedWording":"국제적으로 기술력을 인증받은 균주"}],
-  "documents":[{"id":"DOC-PAT-001","title":"특허출원 실시예 요약","category":"핵심기술·특허","summary":"핵심 배양·정제 조건과 검증 필요사항을 정리한 공개 요약입니다.","status":"active","publicationLevel":"PUBLIC","publicationApproved":"Y","sourceType":"patent_application","modifiedAt":"2026-08-10","gateIds":["G02"],"claimIds":["CLM-001"]},{"id":"DOC-RESTRICTED-001","title":"내부 HPLC 원시데이터","category":"기술검증","summary":"원문은 비공개이며 열람 요청을 통해 별도 검토합니다.","status":"active","publicationLevel":"RESTRICTED","publicationApproved":"N","sourceType":"internal_experiment","modifiedAt":"2026-08-10","gateIds":["G02"],"claimIds":["CLM-001"]}],
-  "experiments":[],"risks":[{"id":"R-001","title":"81 g/L 독립 재현성 미확인","severity":"high","mitigation":"질량수지·독립반복·외부 교차분석을 G02로 추적"},{"id":"R-002","title":"300 L Scale-up 데이터 부재","severity":"high","mitigation":"파일럿 배치 설계와 Titer·Yield·Productivity 기준 수립"},{"id":"R-003","title":"공개자료와 원본자료 경계","severity":"medium","mitigation":"PUBLIC + Y 화이트리스트와 fail-closed 검증"}],
-  "roadmap":[{"year":"2026","title":"법인·IP 귀속과 데이터 기준 정립","items":["Master Control Sheet 운영","공개정책·Claim-Evidence 연결"]},{"year":"2027","title":"독립검증과 반복 재현성","items":["G02 질량수지 검증","G03 5 L 반복배치"]},{"year":"2028","title":"Scale-up·제조·제품규격","items":["G04 300 L 파일럿","휴먼·사료 우선 상용화 준비"]},{"year":"2029–2030","title":"상장준비와 심사 대응","items":["모의 기술평가","정식 기술평가·예비심사"]}],
-  "products":[{"id":"human-gaba","name":"휴먼그레이드 GABA 소재","market":"Human Nutrition","stage":"우선 상용화","status":"규격·안정성 검증 중","description":"식품·영양 적용을 위한 우선 제품 파이프라인"},{"id":"feed-gaba","name":"사료용 GABA 소재","market":"Animal Nutrition","stage":"우선 상용화","status":"적용성 검토 중","description":"사료 적용을 위한 우선 제품 파이프라인"},{"id":"beauty-biocellulose","name":"바이오셀룰로오스 소재","market":"Beauty","stage":"검증 중인 확장 파이프라인","status":"확장 검증 중","description":"RFK188 특성을 활용한 화장품 소재 확장영역"},{"id":"agri-gaba","name":"농업용 GABA 소재","market":"Agriculture","stage":"검증 중인 확장 파이프라인","status":"계획·검증 중","description":"농업용 적용 가능성을 검토하는 확장영역"}],
-  "esg":["바이오셀룰로오스 부산물 활용 검토","LCA·MRV 기준 설계","농업·건축소재 공동연구 가능성 관리"],"consultationCategories":[{"id":"ipo","name":"기술성평가·IPO","description":"Gate·기술성평가·데이터룸 협업"},{"id":"scaleup","name":"발효 Scale-up·OEM","description":"공정이전·CDO·OEM 상담"},{"id":"patent","name":"특허·라이선스","description":"특허·균주·공동개발 상담"},{"id":"product","name":"제품·샘플","description":"휴먼·사료·코스메틱·농업 제품 상담"}],"publicationPolicy":{"rule":"publicationLevel = PUBLIC AND publicationApproved = Y","levels":["PUBLIC","RESTRICTED","CONFIDENTIAL"]},"syncHealth":{"mode":"fallback-snapshot","endpointConfigured":false,"status":"Drive endpoint 미설정 · 마지막 승인 스냅샷으로 표시 중"}
+  "technology": {
+    "strains": [
+      "Lactobacillus sakei GK-3 · KCTC 16526BP",
+      "Komagataeibacter intermedius RFK188 · KCTC 16527BP"
+    ],
+    "patents": [
+      "특허출원 10-2025-0185982",
+      "특허출원 10-2025-0186011"
+    ],
+    "process": [
+      "하이브리드 정밀발효",
+      "분리·청징·표준화",
+      "GABA 바이오소재 플랫폼"
+    ]
+  },
+  "claims": [
+    {
+      "claimId": "CLM-001",
+      "claim": "동시 혼합배양 조건에서 GABA 81 g/L가 제시됨",
+      "claimType": "특허출원 실시예",
+      "evidenceLevel": "patent_application",
+      "limitation": "질량수지·독립 반복·외부 교차분석 필요",
+      "verificationStatus": "verification_required",
+      "publicWording": "특허출원 실시예에서 81 g/L가 제시되었습니다.",
+      "prohibitedWording": "상업생산에서 81 g/L를 달성했습니다."
+    },
+    {
+      "claimId": "CLM-002",
+      "claim": "핵심 균주 2종이 KCTC에 국제기탁됨",
+      "claimType": "기탁 사실",
+      "evidenceLevel": "official_document",
+      "limitation": "기탁은 기술 효능이나 상업성 인증을 의미하지 않음",
+      "verificationStatus": "partially_verified",
+      "publicWording": "부다페스트조약에 따른 국제기탁기관 KCTC에 핵심 균주 2종을 기탁했습니다.",
+      "prohibitedWording": "국제적으로 기술력을 인증받은 균주"
+    }
+  ],
+  "documents": [
+    {
+      "id": "DOC-PAT-001",
+      "title": "특허출원 실시예 요약",
+      "category": "핵심기술·특허",
+      "summary": "핵심 배양·정제 조건과 검증 필요사항을 정리한 공개 요약입니다.",
+      "status": "active",
+      "publicationLevel": "PUBLIC",
+      "publicationApproved": "Y",
+      "sourceType": "patent_application",
+      "modifiedAt": "2026-08-10",
+      "gateIds": [
+        "G02"
+      ],
+      "claimIds": [
+        "CLM-001"
+      ]
+    },
+    {
+      "id": "DOC-RESTRICTED-001",
+      "title": "내부 HPLC 원시데이터",
+      "category": "기술검증",
+      "summary": "원문은 비공개이며 열람 요청을 통해 별도 검토합니다.",
+      "status": "active",
+      "publicationLevel": "RESTRICTED",
+      "publicationApproved": "N",
+      "sourceType": "internal_experiment",
+      "modifiedAt": "2026-08-10",
+      "gateIds": [
+        "G02"
+      ],
+      "claimIds": [
+        "CLM-001"
+      ]
+    }
+  ],
+  "experiments": [],
+  "risks": [
+    {
+      "id": "R-001",
+      "title": "81 g/L 독립 재현성 미확인",
+      "severity": "high",
+      "mitigation": "질량수지·독립반복·외부 교차분석을 G02로 추적"
+    },
+    {
+      "id": "R-002",
+      "title": "300 L Scale-up 데이터 부재",
+      "severity": "high",
+      "mitigation": "파일럿 배치 설계와 Titer·Yield·Productivity 기준 수립"
+    },
+    {
+      "id": "R-003",
+      "title": "공개자료와 원본자료 경계",
+      "severity": "medium",
+      "mitigation": "PUBLIC + Y 화이트리스트와 fail-closed 검증"
+    }
+  ],
+  "roadmap": [
+    {
+      "year": "2026",
+      "title": "법인·IP 귀속과 데이터 기준 정립",
+      "items": [
+        "Master Control Sheet 운영",
+        "공개정책·Claim-Evidence 연결"
+      ]
+    },
+    {
+      "year": "2027",
+      "title": "독립검증과 반복 재현성",
+      "items": [
+        "G02 질량수지 검증",
+        "G03 5 L 반복배치"
+      ]
+    },
+    {
+      "year": "2028",
+      "title": "Scale-up·제조·제품규격",
+      "items": [
+        "G04 300 L 파일럿",
+        "휴먼·사료 우선 상용화 준비"
+      ]
+    },
+    {
+      "year": "2029–2030",
+      "title": "상장준비와 심사 대응",
+      "items": [
+        "모의 기술평가",
+        "정식 기술평가·예비심사"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "human-gaba",
+      "name": "휴먼그레이드 GABA 소재",
+      "market": "Human Nutrition",
+      "stage": "우선 상용화",
+      "status": "규격·안정성 검증 중",
+      "description": "식품·영양 적용을 위한 우선 제품 파이프라인"
+    },
+    {
+      "id": "feed-gaba",
+      "name": "사료용 GABA 소재",
+      "market": "Animal Nutrition",
+      "stage": "우선 상용화",
+      "status": "적용성 검토 중",
+      "description": "사료 적용을 위한 우선 제품 파이프라인"
+    },
+    {
+      "id": "beauty-biocellulose",
+      "name": "바이오셀룰로오스 소재",
+      "market": "Beauty",
+      "stage": "검증 중인 확장 파이프라인",
+      "status": "확장 검증 중",
+      "description": "RFK188 특성을 활용한 화장품 소재 확장영역"
+    },
+    {
+      "id": "agri-gaba",
+      "name": "농업용 GABA 소재",
+      "market": "Agriculture",
+      "stage": "검증 중인 확장 파이프라인",
+      "status": "계획·검증 중",
+      "description": "농업용 적용 가능성을 검토하는 확장영역"
+    }
+  ],
+  "esg": [
+    "바이오셀룰로오스 부산물 활용 검토",
+    "LCA·MRV 기준 설계",
+    "농업·건축소재 공동연구 가능성 관리"
+  ],
+  "consultationCategories": [
+    {
+      "id": "ipo",
+      "name": "기술성평가·IPO",
+      "description": "Gate·기술성평가·데이터룸 협업"
+    },
+    {
+      "id": "advisor",
+      "name": "상장자문·PMO",
+      "description": "주관사·법무·회계·PMO 협업"
+    },
+    {
+      "id": "investment",
+      "name": "투자·IR",
+      "description": "투자자 미팅·IR 자료 협업"
+    },
+    {
+      "id": "patent",
+      "name": "특허·라이선스",
+      "description": "특허·균주·공동개발 상담"
+    },
+    {
+      "id": "scaleup",
+      "name": "발효 Scale-up·OEM",
+      "description": "공정이전·CDO·OEM 상담"
+    },
+    {
+      "id": "quality",
+      "name": "품질·GMP·규제",
+      "description": "품질시스템·규제·인증 협업"
+    },
+    {
+      "id": "human",
+      "name": "휴먼 뉴트리션",
+      "description": "건기식·기능성 원료 제품 상담"
+    },
+    {
+      "id": "feed",
+      "name": "사료·축산",
+      "description": "사료·축산 응용 및 고객개발"
+    },
+    {
+      "id": "cosmetic",
+      "name": "코스메틱",
+      "description": "화장품 원료·제형·고객개발"
+    },
+    {
+      "id": "agriculture",
+      "name": "농업·작물",
+      "description": "농업·작물 응용 및 실증"
+    },
+    {
+      "id": "esg",
+      "name": "ESG·바이오셀룰로오스",
+      "description": "ESG 소재·바이오셀룰로오스 협업"
+    },
+    {
+      "id": "dataroom",
+      "name": "데이터룸·증빙",
+      "description": "원본자료·Claim-Evidence 열람"
+    },
+    {
+      "id": "other",
+      "name": "기타 협업",
+      "description": "기타 문의 및 제휴 제안"
+    }
+  ],
+  "publicationPolicy": {
+    "rule": "publicationLevel = PUBLIC AND publicationApproved = Y",
+    "levels": [
+      "PUBLIC",
+      "RESTRICTED",
+      "CONFIDENTIAL"
+    ]
+  },
+  "syncHealth": {
+    "mode": "fallback-snapshot",
+    "endpointConfigured": false,
+    "status": "Drive endpoint 미설정 · 마지막 승인 스냅샷으로 표시 중"
+  }
 }
